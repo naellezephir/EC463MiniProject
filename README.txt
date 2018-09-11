@@ -20,12 +20,14 @@ OVERVIEW
  	- TEMPERATURE MODULE
  	- HUMIDITY MODULE
 
+TEMP MODULE
 -------------------------------------------------------------
 TEMPERATURE CONSIDERATIONS
-HIGHEST RECORDED AIR TEMPERATURE - 134F
-LOWEST RECORDED AIR TEMPERATURE - -128.6F
+HIGHEST RECORDED AIR TEMPERATURE -> 134F
+LOWEST RECORDED AIR TEMPERATURE -> -128.6F
 -------------------------------------------------------------
 
+HUMID MODULE
 -------------------------------------------------------------
 HUMIDITY DATA - ABSOLUTE, RELATIVE OR SPECIFIC
 RELATIVE HUMIDITY : 0% - 100% (1% IS LOWEST RECORDED ON EARTH), OVERSATURATION POSSIBLE IN HIGH ATMOSPHERE
@@ -33,3 +35,25 @@ RELATIVE HUMIDITY : 0% - 100% (1% IS LOWEST RECORDED ON EARTH), OVERSATURATION P
 DEW POINT
 HIGHEST RECORDED DEW POINT - 95F
 LOWEST ???
+-------------------------------------------------------------
+
+TECH
+-------------------------------------------------------------
+CLOUD SERVICES : AMAZON WEB SERVICES, MICROSOFT AZURE, GOOGLE CLOUD, ?ORACLE DATABASES?
+      -FIRST 3 OFFER FREE TRIALS
+NETWORK COMMUNICATION : JSON (?BSON?), XML, PLAINTEXT
+LOGIN SERVICES : GOOGLE, FACEBOOK, SSH, OTHER?
+FRONTEND : TERMINAL?, PYTHON
+-------------------------------------------------------------
+
+METRICS
+-------------------------------------------------------------
+???
+COMPARE DATA SENT W/ DATA OBSERVED?
+-------------------------------------------------------------
+
+SENSOR SIM
+-------------------------------------------------------------
+MININET W/ PERIODIC PINGS
+UPLOAD RANDOM DATASHEET
+-------------------------------------------------------------
