@@ -22,7 +22,7 @@ from django.urls import include
 urlpatterns = [
 	path('', views.index, name='index'),
 	path('index', views.index, name='index'),
-	path('signup', views.signup, name='signup')
+	path('add_room', views.index, name = 'add_room'),
 	path('login', auth_views.LoginView.as_view(), name='login'),
 	path('logout', auth_views.LogoutView.as_view(), name = 'logout'),
 	path('auth', include('social_django.urls', namespace='social')),

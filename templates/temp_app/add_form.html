@@ -1,0 +1,10 @@
+{% extends 'temp_app/base.html' %}
+{% block content %}
+	<h1>New Room</h1>
+	<form method="Post">
+		{% csrf_token %}
+        {{ form.as_p }}
+        <button type="Submit">Save</button>
+	</form>
+
+{% endblock %}
