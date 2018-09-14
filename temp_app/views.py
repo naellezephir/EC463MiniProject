@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.auth.mixin import LoginRequiredMixin
 from django.views import generic
 from .models import Rooms
 from .forms import RoomForm
@@ -10,7 +9,7 @@ def index(request):
 	my_dict = {'insert_me': "coming from first app thing"}
 	return render(request,'temp_app/index.html', context=my_dict)
 
-class RoomListView(LoginRequiredMixin, generic.ListView):
+class RoomListView(generic.ListView):
 	model = Rooms
 	context_object_name = "room_list"
 	template_name = 'index.html'

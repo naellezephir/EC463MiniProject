@@ -18,10 +18,11 @@
 			}
 		{% else %}
 			<p>You have no rooms connected yet</p>
-			<a href="{% url 'add_room %}">ADD A ROOM</a>
+			<a href="{% url 'add_room' %}">ADD A ROOM</a>
 		{% endif %}
 
 	{% else %}
 		<p>Please Login</p>
 		<button></button>
+	{% endif %}
 {% endblock %}
