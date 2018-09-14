@@ -1,0 +1,7 @@
+{% extends '../temp_app/base.html' %}
+
+{% block content %}
+  <h2>Login</h2>
+  <a href="{% url 'social:begin' 'google-oauth2' %}"><h1>Login with Google</h1></a><br>
+
+{% endblock %}

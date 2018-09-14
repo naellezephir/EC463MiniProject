@@ -1,0 +1,27 @@
+{% extends 'temp_app/base.html' %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+		<h1>Hello {{users.first_name}} </h1>
+		<h4>Your Rooms</h4>
+
+		{% if rooms_list %}
+		<ul>
+			{% for room in rooms_list %}
+
+			<li>{{room.nickname}
+				<li>Temperature: {{ room.temperature}}</li>
+				<li>Humidity: {{room.humidity}}</li>
+      		</li>
+      		{% endfor %}
+		</ul>
+			}
+		{% else %}
+			<p>You have no rooms connected yet</p>
+			<a href="{% url 'add_room %}">ADD A ROOM</a>
+		{% endif %}
+
+	{% else %}
+		<p>Please Login</p>
+		<button></button>
+{% endblock %}
