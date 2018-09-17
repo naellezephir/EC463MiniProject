@@ -10,6 +10,18 @@ def sim_timer(time):
 	while time:
 		time.sleep(1)
 		t -= 1
+ 
+def generate(unit_id, owner):
+	# Format: Unit ID, Date/time, type, owner, value
+	timestamp = time.localtime()
+	data = {
+		"unit_id": unit_id,
+		"date_time": [timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4]],
+		"type": "temperature",
+		"owner": owner,
+		"value": 50 # Replace w/ random value
+	}
+	return data
 
 # Update host and port w/ ACTUAL host/port values
 HOST = 'localhost'
@@ -22,10 +34,11 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_address = (HOST, PORT)
 print('HOST: {} PORT: {}'.format(*server_address))
 sock.connect(server_address)
-while True:
-	try:
+
+try:
+	while True:
 		#send data
-		data = b'MESSAGE'
+		data = generate(650, "Kuro")
 		print('Message: {!r}'.format(data))
 		sock.sendall(data)
 
@@ -38,8 +51,9 @@ while True:
 			amount_recieved += len(rcv_data)
 			print('Recieved {!r}'.format(rcv_data))
 
+		#add 20 sec timer
 		sim_timer(20)
-		
-	finally:
-		print('close socket')
-		sock.close()
+
+finally:
+	print('close socket')
+	sock.close()
