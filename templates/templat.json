@@ -1,0 +1,7 @@
+{
+	"unit_id": U0001,
+	"date_time": [year, month, day, hour, sec],
+	"type": "humidty/temp",
+	"owner": user,
+	"data": value
+}
