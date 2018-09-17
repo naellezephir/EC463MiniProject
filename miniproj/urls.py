@@ -19,6 +19,7 @@ from django.urls import path
 from temp_app import views
 from django.urls import include
 
+#routing for app
 urlpatterns = [
 	path('', views.index, name='index'),
 	path('index', views.index, name='index'),
