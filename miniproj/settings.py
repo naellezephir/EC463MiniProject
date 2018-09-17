@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 #LOGIN_URL AND REDIRECT_URL
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = '/'
 
 #AUTH SECRET
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '36769692394-5crl8snhif3p3nrhqjupurvpvdit2ldq.apps.googleusercontent.com'

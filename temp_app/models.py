@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Rooms(models.Model):
+class Room(models.Model):
 	nickname = models.CharField(max_length = 50)
 	temperature = models.IntegerField()
 	humidity = models.IntegerField()
