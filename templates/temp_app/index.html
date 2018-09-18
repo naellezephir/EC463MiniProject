@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
-		<h1>Hello {{users.first_name}} </h1>
+		<h1>Hello {{user.first_name}} </h1>
 		<h4>Your Rooms</h4>
 
 		{% if rooms_list %}

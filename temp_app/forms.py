@@ -2,8 +2,9 @@ from django import forms
 from .models import Rooms
 from django.forms import ModelForm
 
-class RoomForm(ModelForm):
+# created form to add a room if one isn't connected
+class RoomForm(forms.ModelForm):
 	class Meta:
 		model = Rooms
-		fields = ['nickname', 'user_name']
+		fields = ['nickname','temperature', 'humidity']
 

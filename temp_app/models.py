@@ -1,7 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class Rooms(models.Model):
+
+# created model for each room object, need to connect with external modules
+class Room(models.Model):
 	nickname = models.CharField(max_length = 50)
 	temperature = models.IntegerField()
 	humidity = models.IntegerField()
