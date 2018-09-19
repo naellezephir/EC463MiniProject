@@ -25,7 +25,7 @@ SECRET_KEY = 'ml2b@nf8)_iglek*58vwscxmwbp$$@y0)tu0s9e86p^q8n%bx&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['miniproject-env.f9qrjzqsbn.us-east-1.elasticbeanstalk.com']
 
 #LOGIN_URL AND REDIRECT_URLs
 LOGIN_URL = 'login'
