@@ -1,4 +1,3 @@
-import json_export
 import time
 
 def generate(unit_id, owner):
@@ -12,18 +11,3 @@ def generate(unit_id, owner):
        	"value": 50 # Replace w/ random value
     }
     return data
-
-def countdown(t):
-    while t:
-        time.sleep(1)
-        t -= 1
-
-while True:
-    data = generate("unit1", "user1")
-    if data is None:
-        print("Error")
-    else:
-        print(data)
-        json_export.json_export("temp_data", data)
-    countdown(5)
-    

@@ -1,47 +1,18 @@
-import os
 import time
-import socket
-import sys
 
 import json_export
+from t_generate import generate
 
 # Timer Def
-def sim_timer(time):
-	while time:
+def countdown(t):
+	while t:
 		time.sleep(1)
 		t -= 1
-
-# Update host and port w/ ACTUAL host/port values
-HOST = 'localhost'
-PORT = 10000
-
-# Create TCP/IP socket of type internet format stream
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Connect socket to server
-server_address = (HOST, PORT)
-print('HOST: {} PORT: {}'.format(*server_address))
-sock.connect(server_address)
-
-try:
-	while True:
-		#send data
-		data = generate(650, "Kuro")
-		print('Message: {!r}'.format(data))
-		sock.sendall(data)
-
-		#response detection
-		amount_recieved = 0
-		amount_expected = len(data)
-
-		while(amount_recieved < amount_expected):
-			rcv_data = sock.recv(16)
-			amount_recieved += len(rcv_data)
-			print('Recieved {!r}'.format(rcv_data))
-
-		#add 20 sec timer
-		sim_timer(20)
-
-finally:
-	print('close socket')
-	sock.close()
+while True:
+    data = generate("unit1", "user1")
+    if data is None:
+        print("Error, data generation failed")
+    else:
+        print(data)
+        json_export.json_export("temp_data", data)
+    countdown(5)
