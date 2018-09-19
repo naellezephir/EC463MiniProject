@@ -1,21 +1,27 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Temperature App</title>
 </head>
-<body>
-	<div class='nav'>
-		<a href="/">Index</a>
-		<!-- if user is logged in display different option --> 
-		{% if user.is_authenticated %}
-			<a href="/logout">Log Out</a>
-		{% else %}
-			<a href="/login">Log In With Google</a>
-		{% endif %}
-	</div>
-	<div class='content'>
-		{% block content %}
-		{% endblock %}
+<body style="background-color: #a8bcc1;">
+	<div class="wrapper">
+		<div class='nav' style="height:4em; width:100%;">
+			<div class='title' style="float:left; padding:.5em; font-size:2em;">Sensor App</div>
+			<div style="float:right; height: 3em; margin:0 auto; padding:.5em 2em; text-align:right;"> 
+				<!--<a href="/" style="float:right; height:3em; padding:1em; text-align:right;">Index</a> -->
+				<!-- if user is logged in display different option --> 
+				{% if user.is_authenticated %}
+					<a href="/logout" style="float:right; height:3em; padding:1em; text-align:right;">Log Out</a>
+				{% else %}
+					<a href="/login" style="float:right; height:3em; padding:1em; text-align:right;">Log In</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class='content' style="text-align: center;">
+			{% block content %}
+			{% endblock %}
+		</div>
 	</div>
 </body>
 </html>

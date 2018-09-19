@@ -1,8 +1,9 @@
 {% extends 'temp_app/base.html' %}
 
 {% block content %}
+	<!-- if user is logged in show rooms if not direct them to login -->
 	{% if user.is_authenticated %}
-		<h1>Hello {{user.first_name}} </h1>
+		<h1 class='title'>Hello {{user.first_name}} </h1>
 		<h4>Your Rooms</h4>
 
 		{% if rooms_list %}
@@ -18,11 +19,11 @@
 			}
 		{% else %}
 			<p>You have no rooms connected yet</p>
-			<a href="{% url 'add_room' %}">ADD A ROOM</a>
+			<button><a href="{% url 'add_room' %}">ADD A ROOM</a></button>
 		{% endif %}
 
 	{% else %}
-		<p>Please Login</p>
-		<button></button>
+		<h1 class='title'>Please Login</h1>
+		<button style="text-transform: uppercase;"><a href="{% url 'social:begin' 'google-oauth2' %}">Log In with Google</a></button>
 	{% endif %}
 {% endblock %}

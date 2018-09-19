@@ -2,20 +2,19 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth import logout as auth_logout
-from .models import Rooms
+from .models import Room
 from .forms import RoomForm
 
 # Create your views here.
 def index(request):
-	my_dict = {'insert_me': "coming from first app thing"}
-	return render(request,'temp_app/index.html', context=my_dict)
+	return render(request,'temp_app/index.html')
 
 def logout(request):
     auth_logout(request)
     return redirect('/')
 
 class RoomListView(generic.ListView):
-	model = Rooms
+	model = Room
 	context_object_name = "room_list"
 	template_name = 'index.html'
 	paginate_by = 5

@@ -26,6 +26,6 @@ urlpatterns = [
 	path('add_room', views.add_room, name = 'add_room'),
     path('auth', include('social_django.urls', namespace='social')),
 	path('login', auth_views.LoginView.as_view(), name='login'),
-	#path('logout', auth_views.logout, {'next_page': '/'}, name='logout'),
+	path('logout', views.logout, name='logout'),
     path('admin/', admin.site.urls),
 ]
